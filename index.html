@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h3 id="viewhighscore">View Highscores</h3>
+        <h1 id="timer">30</h1>
+    </header>
+
+ 
+<div id="outterbox">
+<div id="start">
+    <h2>Coding Quiz Challengue</h2>
+    <button id="startbutton" >Start</button>
+</div>
+
+<div id="question1" class="hidden">
+    <h3>How do you listen for an event in javascript?</h3>
+    <button id="correctbtn1">.addEvenListener</button>
+    <button id="wrongbtn1"> .getElementById</button>
+    <button id="wrong1">.querySelector</button>
+</div>
+<div id="question2" class="hidden">
+    <h3>What language is used for styling?</h3>
+    <button id="wrongbtn2">Github</button>
+    <button id="correctbtn2">CSS </button>
+    <button id="wrong2">Youtube</button>
+</div>
+<div id="question3" class="hidden">
+    <h3>What language is used to create a function?</h3>
+    <button id="wrongbtn3">English</button>
+    <button id="wrong3">Spanish</button>
+    <button id="correctbtn3">Javascript</button>
+</div>
+<div id="options" class="hidden">
+    <h2>Your Final Score</h2>
+    <h2 id="scorecount">0</h2>
+    <h2 id="userdisplay"></h2>
+    <input type="text" id="usertext" placeholder="username">
+    <button id="submitbutton">submit</button>
+    
+</div>
+
+<div id=highscorebox class="hidden"> 
+    <h1>Highscores</h1>
+ <h1 id="highscores"></h1>
+<button id="erase">Erase Scores</button>
+</div>
+<button id="reload" class="hidden">restart</button>
+
+<h1 id="answervalue"></h1>
+  </div>
+    
+ 
+  
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
