@@ -1,3 +1,6 @@
+//this is a list of variables created to connect with html and javascript functions
+//with the help of queryselectors and get elementbyid 
+//
 var startButton = document.getElementById("startbutton");
 var rightAnswer1 = document.getElementById("correctbtn1");
 var rightAnswer2 = document.getElementById("correctbtn2");
@@ -26,7 +29,8 @@ var count = 30
 var sCount = 0
 
  
-
+//an event listener was given to the removeEl function to get the quiz and timer started 
+//also lets you know when you ran out of time
 startButton.addEventListener("click", removeEl)
 
  function removeEl(countDown){
@@ -49,7 +53,7 @@ var countDown= setInterval(function () {
     
     }, 1000);
 }
-
+//this eveListener tells the function when to make the highscores visible
 viewHigh.addEventListener("click", function(){
   document.getElementById("highscorebox").classList.remove("hidden");
   document.getElementById("options").classList.add("hidden");
@@ -59,22 +63,23 @@ viewHigh.addEventListener("click", function(){
   
 
 })
-
+//the submit button allows the user to submit their quiz score along with their name
 submitBtn.addEventListener("click", function(){
   inputDisplay.textContent = userInput.value;
-  highscoresDis.textContent = userInput.value + "=" + sCount;
-   
-  localStorage.setItem("inputvalue", highscoresDis.textContent);
-  
-
+  highscoresDis.append(" (" + userInput.value + " = " + sCount + "pts) ");
+   localStorage.setItem("inputvalue", highscoresDis.textContent);
+  document.getElementById("highscorebox").classList.remove("hidden");
+  document.getElementById("options").classList.add("hidden");
+  document.getElementById("answervalue").remove();
 })
 if(storedInput) {
     highscoresDis.textContent = storedInput
   }
+  //restart button allows the user to start the quiz over again
 restartBtn.addEventListener("click", function () {
   window.location.reload();
 })
-
+//rease scores button allows the user to remove every scored saved into local storage
 eraseScoresBtn.addEventListener("click", function(){
   localStorage.removeItem("inputvalue")
   window.location.reload()
@@ -82,7 +87,7 @@ eraseScoresBtn.addEventListener("click", function(){
 
 
 // these event listeners and functions lets the user know
-//their answer was correct
+//their answer was correct and adds 5 points to their score
 rightAnswer1.addEventListener("click", function(){
     document.getElementById("question2").classList.remove("hidden");
     document.getElementById("question1").remove()
@@ -110,7 +115,7 @@ rightAnswer1.addEventListener("click", function(){
       })
 
     //these events and functions lets the user know
-    //their answer was wrong
+    //their answer was wrong, also reduces time by 5 seconds
     
     
     
@@ -138,7 +143,7 @@ rightAnswer1.addEventListener("click", function(){
     
    } )
 
-   //another
+ 
 
    
    wrong1.addEventListener("click", function(){
